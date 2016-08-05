@@ -1,4 +1,3 @@
-#Inspired by the recent protests of deaths of Philando Castille
 #Using data from washington post shooting report since Jan 2015
 
 import pandas as pd
@@ -11,9 +10,10 @@ percent_AA_deaths = len(AA_Deaths.index)/len(Shootings.index)
 #Next, an interested political science friend asked for race and shooting combination
 
 States_only = AA_Deaths['state']
-
+#Bar chart of stats vs African Americans killed
 AA_bar = bokeh.charts.Bar(States_only,label='state',values='state',agg='count',title = "African American Deaths per State since 2015",legend=False)
 
+#Bar chart of states vs Caucasians Killed
 White_Shootings = Shootings[Shootings['race']=='W']
 White_States_Only = White_Shootings['state']
 
